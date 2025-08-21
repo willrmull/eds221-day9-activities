@@ -64,7 +64,7 @@ names(birds_1)
 skim(birds_1)
 
 # See the different species (species_id)
-unique(birds_1 %>% species_id)
+unique(birds_1$species_id)
 
 # Check out the taxa information
 head(taxalist_1)
@@ -76,7 +76,7 @@ The code below should join the information in `taxalist_1` to the `birds_1` data
 
 ```{r, include = FALSE}
 birds_df <- birds_1 %>% 
-  left_join(taxalist_1, by = "species")
+  left_join(taxalist_1, by = "species_id")
 ```
 
 ## Find total counts by park and plot top 15
